@@ -6,7 +6,7 @@ categories: journal
 image: digital_marketing.jpg
 ---
 
-This is a demonstration of using R and statistics to solve the marketing
+This is a demonstration that uses R and statistics to solve the marketing
 problem outlined below.
 
 I am using Windows 10, R version 4.1.0, and RStudio version 1.4.1106.
