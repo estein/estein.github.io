@@ -3,7 +3,7 @@ layout: post
 title: "Marketing Data Analytics Example"
 author: "Evan Stein"
 categories: journal
-image: mountains.jpg
+image: digital_marketing.jpg
 ---
 
 This is a demonstration of using R and statistics to solve the marketing
