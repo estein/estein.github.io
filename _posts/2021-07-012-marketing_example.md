@@ -2,7 +2,6 @@
 layout: post
 title: "Marketing Data Analytics Example"
 author: "Evan Stein"
-categories: journal
 image: digital_marketing.jpg
 ---
 
