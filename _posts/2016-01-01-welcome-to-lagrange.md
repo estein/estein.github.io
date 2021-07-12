@@ -219,7 +219,7 @@ mkt_plot %>%
   theme(strip.text.x = element_blank())
 ```
 
-![](MarketingEDA_ES_7.8.21_files/figure-gfm/outliers-1.png)<!-- -->
+![](/assets/img/outliers-1.png)<!-- -->
 
 There are some outliers in the Age variable (top right boxplot) - there
 seems to be a few customers that are over the age of 100. That is a bit
@@ -966,7 +966,7 @@ depe_plt <- ggplot(data = depe, aes(x = Dependents, y = Percent, fill = Dependen
 grid.arrange(ed_plt, ms_plt, cnty_plt, gen_plt, depe_plt, ncol = 2)
 ```
 
-![](MarketingEDA_ES_7.8.21_files/figure-gfm/demo_viz-1.png)<!-- -->
+![](/assets/img/demo_viz-1.png)<!-- -->
 
 #### Which channels are under performing?
 
@@ -1045,7 +1045,7 @@ dep_c_plt <- ggplot(data = dep_chan, aes(x = Dependents, y = response, fill = va
 grid.arrange(ed_c_plt, ms_c_plt, ctr_c_plt, gen_c_plt, dep_c_plt, ncol = 1)
 ```
 
-![](MarketingEDA_ES_7.8.21_files/figure-gfm/plt_chan-1.png)<!-- -->
+![](/assets/img/plt_chan-1.png)<!-- -->
 
 #### Which products are performing best?
 
@@ -1134,7 +1134,7 @@ dep_s_plt <- ggplot(data = dep_spend, aes(x = Dependents, y = response, fill = v
 grid.arrange(ed_s_plt, ms_s_plt, ctr_s_plt, gen_s_plt, dep_s_plt, ncol = 1)
 ```
 
-![](MarketingEDA_ES_7.8.21_files/figure-gfm/plt_amount-1.png)<!-- -->
+![](/assets/img/plt_amount-1.png)<!-- -->
 
 Please plot and visualize the answers to the below questions.
 
