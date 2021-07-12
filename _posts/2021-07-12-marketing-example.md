@@ -5,14 +5,23 @@ author: "Evan Stein"
 image: marketing.jpg
 ---
 
-This is a demonstration that uses R and statistics to solve the marketing
-problem outlined below.
+This is a demonstration that uses R and statistics to solve the
+marketing problem outlined below.
 
 I am using Windows 10, R version 4.1.0, and RStudio version 1.4.1106.
 
 The data for this project can be found here [Marketing Analytics:
 Practice Exploratory and Statistical Analysis with Marketing
 Data](https://www.kaggle.com/jackdaoud/marketing-data).
+
+# Table of Contents
+
+1.  [Task Details](#td)
+2.  [Section 01: Understanding the Data](#s01)
+3.  [Reading and viewing the data](#rvdata)
+4.  
+5.  
+6.  
 
 I will use the following packages:
 
@@ -46,9 +55,13 @@ Officer that recent marketing campaigns have not been as effective as
 they were expected to be. You need to analyze the data set to understand
 this problem and propose data-driven solutions.
 
-There are five sections to this task: 1. Understanding the Data 2.
-Exploratory Data Analysis 3. Data Visualization 4. Statistical Analysis
-5. CMO Recommendations
+There are five sections to this task:
+
+1.  Understanding the Data
+2.  Exploratory Data Analysis
+3.  Data Visualization
+4.  Statistical Analysis
+5.  CMO Recommendations
 
 ## Section 01: Understanding the Data
 
@@ -1100,33 +1113,6 @@ s_plt
 ![](MarketingEDA_ES_7.8.21_files/figure-gfm/plt_all_amount-1.png)<!-- -->
 
 ``` r
-# Products performing the best
-spend <- mkt_data_ana %>%
-  select(starts_with("Mnt")) %>% # Select the education and amount spent 
-  pivot_longer(starts_with("Mnt"), names_to = "variable", values_to = "response") %>% # Wide to long format
-  mutate(variable = str_remove_all(variable, "Mnt"),
-         variable = str_remove_all(variable, "Products"),
-         variable = str_remove_all(variable, "Prods")) # Remove the mnt, prods, and products
-
-spend_med <- spend %>%
-  group_by(variable) %>%
-  summarise(med = median(response))
-
-s_plt <- ggplot(data = spend, aes(x = variable, y = response, fill = variable)) + 
-  geom_boxplot() + 
-  labs(x = "Product Type", y = "Amount Spent") +
-  scale_fill_brewer(palette = "Set1") + # Change the colors +
-  geom_text(data = spend_med, aes(x = variable, y = med, label = med), size = 5,  vjust = -10) +
-  coord_cartesian(clip = "off") +
-  theme_classic() + 
-  theme(legend.position = "none")
-
-s_plt
-```
-
-![](MarketingEDA_ES_7.8.21_files/figure-gfm/plt_amount-1.png)<!-- -->
-
-``` r
 # Spending by education
 ed_spend <- mkt_data_ana %>%
   select(Education, starts_with("Mnt")) %>% # Select the education and amount spent 
@@ -1211,7 +1197,7 @@ dep_s_plt <- ggplot(data = dep_spend, aes(x = Dependents, y = response, fill = v
 grid.arrange(ed_s_plt, ms_s_plt, ctr_s_plt, gen_s_plt, dep_s_plt, ncol = 1)
 ```
 
-![](MarketingEDA_ES_7.8.21_files/figure-gfm/plt_amount-2.png)<!-- -->
+![](MarketingEDA_ES_7.8.21_files/figure-gfm/plt_amount-1.png)<!-- -->
 The best performing products overral is wine and then meat products.
 This is true even when you split the data by education, marital status,
 country, generation, and number of dependents.
@@ -1219,6 +1205,10 @@ country, generation, and number of dependents.
 -   Which marketing campaign is most successful?
 
 ### Section 04: Statistical Analysis
+
+## USE THIS <http://www.sthda.com/english/articles/38-regression-model-validation/157-cross-validation-essentials-in-r/>
+
+# <https://github.com/topepo/caret/issues/876>
 
 ## Do a model w/ all and select significant and then do a stepwise model
 
