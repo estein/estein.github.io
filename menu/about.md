@@ -1,19 +1,11 @@
 ---
 layout: page
-title: Welcome to Lagrange!
+title: About me!
 permalink: /about
 ---
 
-Lagrange is a minimalist Jekyll theme. The purpose of this theme is to provide a simple, clean, content-focused blogging platform for your personal site or blog. Below you can find everything you need to get started.
+<img class="img-rounded" src="/assets/img/profile.png" alt="Evan Stein" width="200">
 
-### Getting Started
+# About
 
-[Getting Started]({{ site.github.url }}{% post_url 2015-10-10-getting-started %}): getting started with installing Lagrange, whether you are completely new to using Jekyll, or simply just migrating to a new Jekyll theme.
-
-### Example Content
-
-[Text and Formatting]({{ site.github.url }}{% post_url 2014-01-01-text-formatting-examples %})
-
-### Questions?
-
-This theme is completely free and open source software. You may use it however you want, as it is distributed under the [MIT License](http://choosealicense.com/licenses/mit/). If you are having any problems, any questions or suggestions, feel free to [tweet at me](https://twitter.com/intent/tweet?text=My%question%about%Lagrange%is:%&amp;via=paululele), or [file a GitHub issue](https://github.com/lenpaul/lagrange/issues/new).
+Dr. Evan Stein is an Assistant Professor of Instruction for the HDO Bachelor’s program and data consultant for the HDO Master’s program. He received his Ph.D. in Cognitive Psychology from The University of Texas at Austin in 2019 under Dr. Art Markman. He graduated from Boston University in 2011 with a dual B.A. degree in Psychology and Neuroscience. Evan loves teaching students about the scientific method, quantitative and qualitative techniques, and how to apply this to real-world contexts. Evan is also passionate about challenging students to think more openly about their career path and having them realize their careers through curiosity and self-reflection. In his off time, Evan likes to go bowling, play paintball and video games with his friends, and hang out with his dog Rocky Raccoon.  
