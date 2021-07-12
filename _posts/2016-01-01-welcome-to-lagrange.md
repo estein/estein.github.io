@@ -3,11 +3,8 @@ layout: post
 title: "Marketing Data Analytics Example"
 author: "Evan Stein"
 categories: journal
-tags: [documentation,sample]
 image: mountains.jpg
 ---
-
-# Introduction
 
 This is a demonstration of using R and statistics to solve the marketing
 problem outlined below.
@@ -219,7 +216,7 @@ mkt_plot %>%
   theme(strip.text.x = element_blank())
 ```
 
-![](/assets/img/outliers-1.png)<!-- -->
+![](MarketingEDA_ES_7.8.21_files/figure-gfm/outliers-1.png)<!-- -->
 
 There are some outliers in the Age variable (top right boxplot) - there
 seems to be a few customers that are over the age of 100. That is a bit
@@ -966,9 +963,34 @@ depe_plt <- ggplot(data = depe, aes(x = Dependents, y = Percent, fill = Dependen
 grid.arrange(ed_plt, ms_plt, cnty_plt, gen_plt, depe_plt, ncol = 2)
 ```
 
-![](/assets/img/demo_viz-1.png)<!-- -->
+![](MarketingEDA_ES_7.8.21_files/figure-gfm/demo_viz-1.png)<!-- -->
 
 #### Which channels are under performing?
+
+``` r
+# Plot of channels
+chan <- mkt_data_ana %>%
+  select(NumWebPurchases, NumCatalogPurchases, NumStorePurchases) %>% # Select the education and amount spent 
+  pivot_longer(starts_with("Num"), names_to = "variable", values_to = "response") %>% # Wide to long format
+  mutate(variable = str_remove_all(variable, "Num"))# Remove the num
+
+chan_med <- chan %>%
+  group_by(variable) %>%
+  summarise(med = median(response))
+
+c_plt <- ggplot(data = chan, aes(x = variable, y = response, fill = variable)) + 
+  geom_boxplot() + 
+  labs(x = "Channel", y = "Number of Purchases") +
+  scale_fill_brewer(palette = "Set1") + # Change the colors
+  geom_text(data = chan_med, aes(x = variable, y = med, label = med), size = 5,  vjust = -1) +
+  coord_cartesian(clip = "off") +
+  theme_classic() + 
+  theme(legend.position = "none") 
+
+c_plt
+```
+
+![](MarketingEDA_ES_7.8.21_files/figure-gfm/plt_all_chan-1.png)<!-- -->
 
 ``` r
 # Spending by education
@@ -1045,9 +1067,65 @@ dep_c_plt <- ggplot(data = dep_chan, aes(x = Dependents, y = response, fill = va
 grid.arrange(ed_c_plt, ms_c_plt, ctr_c_plt, gen_c_plt, dep_c_plt, ncol = 1)
 ```
 
-![](/assets/img/plt_chan-1.png)<!-- -->
+![](MarketingEDA_ES_7.8.21_files/figure-gfm/plt_chan-1.png)<!-- --> The
+channel that is under performing overall is catalogs. Store and web
+purchases are close in median values.
 
 #### Which products are performing best?
+
+``` r
+# Products performing the best
+spend <- mkt_data_ana %>%
+  select(starts_with("Mnt")) %>% # Select the education and amount spent 
+  pivot_longer(starts_with("Mnt"), names_to = "variable", values_to = "response") %>% # Wide to long format
+  mutate(variable = str_remove_all(variable, "Mnt"),
+         variable = str_remove_all(variable, "Products"),
+         variable = str_remove_all(variable, "Prods")) # Remove the mnt, prods, and products
+
+spend_med <- spend %>%
+  group_by(variable) %>%
+  summarise(med = median(response))
+
+s_plt <- ggplot(data = spend, aes(x = variable, y = response, fill = variable)) + 
+  geom_boxplot() + 
+  labs(x = "Product Type", y = "Amount Spent") +
+  scale_fill_brewer(palette = "Set1") + # Change the colors +
+  geom_text(data = spend_med, aes(x = variable, y = med, label = med), size = 5,  vjust = -10) +
+  coord_cartesian(clip = "off") +
+  theme_classic() + 
+  theme(legend.position = "none")
+
+s_plt
+```
+
+![](MarketingEDA_ES_7.8.21_files/figure-gfm/plt_all_amount-1.png)<!-- -->
+
+``` r
+# Products performing the best
+spend <- mkt_data_ana %>%
+  select(starts_with("Mnt")) %>% # Select the education and amount spent 
+  pivot_longer(starts_with("Mnt"), names_to = "variable", values_to = "response") %>% # Wide to long format
+  mutate(variable = str_remove_all(variable, "Mnt"),
+         variable = str_remove_all(variable, "Products"),
+         variable = str_remove_all(variable, "Prods")) # Remove the mnt, prods, and products
+
+spend_med <- spend %>%
+  group_by(variable) %>%
+  summarise(med = median(response))
+
+s_plt <- ggplot(data = spend, aes(x = variable, y = response, fill = variable)) + 
+  geom_boxplot() + 
+  labs(x = "Product Type", y = "Amount Spent") +
+  scale_fill_brewer(palette = "Set1") + # Change the colors +
+  geom_text(data = spend_med, aes(x = variable, y = med, label = med), size = 5,  vjust = -10) +
+  coord_cartesian(clip = "off") +
+  theme_classic() + 
+  theme(legend.position = "none")
+
+s_plt
+```
+
+![](MarketingEDA_ES_7.8.21_files/figure-gfm/plt_amount-1.png)<!-- -->
 
 ``` r
 # Spending by education
@@ -1134,17 +1212,14 @@ dep_s_plt <- ggplot(data = dep_spend, aes(x = Dependents, y = response, fill = v
 grid.arrange(ed_s_plt, ms_s_plt, ctr_s_plt, gen_s_plt, dep_s_plt, ncol = 1)
 ```
 
-![](/assets/img/plt_amount-1.png)<!-- -->
-
-Please plot and visualize the answers to the below questions.
+![](MarketingEDA_ES_7.8.21_files/figure-gfm/plt_amount-2.png)<!-- -->
+The best performing products overral is wine and then meat products.
+This is true even when you split the data by education, marital status,
+country, generation, and number of dependents.
 
 -   Which marketing campaign is most successful?
 
 ### Section 04: Statistical Analysis
-
-## USE THIS <http://www.sthda.com/english/articles/38-regression-model-validation/157-cross-validation-essentials-in-r/>
-
-# <https://github.com/topepo/caret/issues/876>
 
 ## Do a model w/ all and select significant and then do a stepwise model
 
