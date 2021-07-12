@@ -12,7 +12,6 @@
 
 # jekyll-paginate configuration
 paginate:            3
-paginate_path: /projects.html
 
 # Build settings
 markdown:            kramdown
