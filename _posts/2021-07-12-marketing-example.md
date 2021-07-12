@@ -4,7 +4,6 @@ title: "Marketing Data Analytics Example"
 author: "Evan Stein"
 image: marketing.jpg
 ---
-
 This is a demonstration that uses R and statistics to solve the
 marketing problem outlined below.
 
@@ -16,9 +15,8 @@ Data](https://www.kaggle.com/jackdaoud/marketing-data).
 
 # Table of Contents
 
-1.  [Task Details](#Task%20Details)
-2.  [Section 01: Understanding the
-    Data](#Section%2001:%20Understanding%20the%20Data)
+1.  [Task Details](#td)
+2.  [Section 01: Understanding the Data](#s1)
 3.  [Reading and viewing the data](#rvdata)
 4.  
 5.  
@@ -49,7 +47,7 @@ library(kableExtra)
 library(gridExtra)
 ```
 
-## Task Details
+## Task Details <a name="td"></a>
 
 You’re a marketing analyst and you’ve been told by the Chief Marketing
 Officer that recent marketing campaigns have not been as effective as
@@ -64,7 +62,7 @@ There are five sections to this task:
 4.  Statistical Analysis
 5.  CMO Recommendations
 
-## Section 01: Understanding the Data
+## Section 01: Understanding the Data <a name="s1"></a>
 
 ### Reading and viewing the data
 
