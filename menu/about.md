@@ -4,7 +4,9 @@ title: About me!
 permalink: /about
 ---
 
-<img class="img-rounded" src="/assets/img/profile.png" alt="Evan Stein" width="200">
+<p align="center">
+  <img src="/assets/img/profile.png" />
+</p>
 
 # About
 
