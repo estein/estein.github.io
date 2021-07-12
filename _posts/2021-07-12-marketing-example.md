@@ -17,10 +17,12 @@ Data](https://www.kaggle.com/jackdaoud/marketing-data).
 
 1.  [Task Details](#td)
 2.  [Section 01: Understanding the Data](#s1)
-3.  [Reading and viewing the data](#rvdata)
+    1.  [Reading and viewing the data](#rvdata)
+    2.  [Data transformation](#tranvar)
+3.  [Section 02: Exploratory Data Analysis](#s2)
+    1.  [Handling outliers](#outliers)
 4.  
 5.  
-6.  
 
 I will use the following packages:
 
@@ -64,7 +66,7 @@ There are five sections to this task:
 
 ## Section 01: Understanding the Data <a name="s1"></a>
 
-### Reading and viewing the data
+### Reading and viewing the data <a name="rvdata"></a>
 
 ``` r
 # Load the data
@@ -111,7 +113,7 @@ mkt_dim <- dim(mkt_data_orig)
 
 The data is from 2240 customers with 28 variables per customer.
 
-### Data Transformation Steps
+### Data transformation <a name="tranvar"></a>
 
 1.  The Income variable is a character data type and needs to be
     numeric.
@@ -127,33 +129,7 @@ mkt_data <- mkt_data_orig %>%
          Income = as.numeric(Income), # Change Income to numeric
          Age    = 2021 - Year_Birth, # Create the Age variable from Year_Birth
          Dt_Customer = as.Date(Dt_Customer, "%m/%d/%y")) # Convert to a Date format
-
-# Original data type
-class(mkt_data_orig$Income)
 ```
-
-    ## [1] "character"
-
-``` r
-class(mkt_data_orig$Dt_Customer)
-```
-
-    ## [1] "character"
-
-``` r
-# Check the transformed data
-class(mkt_data$Income)
-```
-
-    ## [1] "numeric"
-
-``` r
-class(mkt_data$Dt_Customer)
-```
-
-    ## [1] "Date"
-
-### Are there any variables that warrant transformations?
 
 Similar to transforming the age variable, we can also calculate a
 variable that represents the number of years a person was a customer.
@@ -196,9 +172,9 @@ mkt_data <- mkt_data %>%
   ))
 ```
 
-## Section 02: Exploratory Data Analysis
+## Section 02: Exploratory Data Analysis <a name="s2"></a>
 
-### Are there any outliers? How will you wrangle/handle them?
+### Are there any outliers? How will you wrangle/handle them? <a name="outliers"></a>
 
 To find out what the outliers are, I need to reduce the data set to just
 the numeric data. The numeric data are:
