@@ -16,8 +16,9 @@ Data](https://www.kaggle.com/jackdaoud/marketing-data).
 
 # Table of Contents
 
-1.  [Task Details](#td)
-2.  [Section 01: Understanding the Data](#s01)
+1.  [Task Details](#Task%20Details)
+2.  [Section 01: Understanding the
+    Data](#Section%2001:%20Understanding%20the%20Data)
 3.  [Reading and viewing the data](#rvdata)
 4.  
 5.  
