@@ -141,7 +141,7 @@ The data is from 2240 customers with 28 variables per customer.
 mkt_data <- mkt_data_orig %>%
   mutate(Income = str_remove_all(Income, pattern = "[$,]"),
          Income = as.numeric(Income), # Change Income to numeric
-         Age    = 2021 - Year_Birth, # Create the Age variable from Year_Birth
+         Age    = lubridate::year(Sys.Date()) - Year_Birth, # Create the Age variable from Year_Birth
          Dt_Customer = as.Date(Dt_Customer, "%m/%d/%y")) # Convert to a Date format
 ```
 
