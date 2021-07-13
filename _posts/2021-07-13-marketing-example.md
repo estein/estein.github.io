@@ -161,7 +161,7 @@ For example:
 ``` r
 # Create the number of years a person was a customer
 mkt_data <- mkt_data %>%
-  mutate(Yr_Customer = 2021 - lubridate::year(Dt_Customer)) # Extract the year from Dt_Cusomter and subtract it from 2021
+  mutate(Yr_Customer = lubridate::year(Sys.Date()) - lubridate::year(Dt_Customer)) # Extract the year from Dt_Cusomter and subtract it from 2021
 
 # Create a variable for the generation
 # First get the min and max year date to see where we should start and end
