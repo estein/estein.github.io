@@ -5,7 +5,7 @@ permalink: /about
 ---
 
 <p align="center">
-  <img src="/assets/img/headshot.png" />
+  <img src="/assets/img/headshot.jpg" />
 </p>
 
 **I am currently looking for a data science role based in Austin, TX, or a remote position.**
