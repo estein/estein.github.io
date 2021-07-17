@@ -3,6 +3,7 @@ layout: post
 title: "CPX: Understanding the Construction Industry’s Professional Development and Educational Need"
 author: "Evan Stein"
 image: cpx_project.png
+site.hide_related_posts: true
 ---
 
 This white paper synthesizes the results of a research study for the capital projects industry to assess the
