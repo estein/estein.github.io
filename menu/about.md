@@ -8,7 +8,7 @@ permalink: /about
   <img src="/assets/img/headshot.jpg" />
 </p>
 
-**I am currently looking for a data science role based in Austin, TX, or a remote position.**
+**I am currently looking for a data science, data analytics, or people analytics role based in Austin, TX, or a remote position.**
 
 Download my current resume [here](https://drive.google.com/file/d/12ZO5j6AzucKMlmb7OkDX77UNZilqntid/view?usp=sharing).
 
