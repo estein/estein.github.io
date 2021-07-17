@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "[R Analysis] Marketing Data Analytics Example"
+title: "Marketing Data Analytics Example"
 author: "Evan Stein"
 image: marketing.jpg
 ---
