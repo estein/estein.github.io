@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "[White Paper] CPX: Understanding the Construction Industry’s Professional Development and Educational Need"
+title: "CPX: Understanding the Construction Industry’s Professional Development and Educational Need"
 author: "Evan Stein"
 image: cpx_project.png
 ---
